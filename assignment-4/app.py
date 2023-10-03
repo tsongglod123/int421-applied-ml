@@ -5,7 +5,7 @@ import pandas as pd
 import numpy as np
 import joblib
 
-MODEL_PATH = "./models/house-price-regression.pkl"
+MODEL_PATH = "models/house-price-regression.pkl"
 TRAIN_PATH = "datasets/train.csv"
 
 loaded_model = joblib.load(MODEL_PATH)
