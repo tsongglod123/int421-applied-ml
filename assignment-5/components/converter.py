@@ -22,7 +22,34 @@ slope_types = {
     "Downsloping": 2
 }
 
-def convert_input(input_data: dict):
-    # code here
+resting_ecg_types = {
+    "Normal": 0,
+    "ST-T Wave Abnormality": 1,
+    "Left Ventricular Hypertrophy": 2
+}
+
+boolean_types = {
+    "Yes": 1,
+    "No": 0
+}
+
+def convert_input(input_data: dict) -> dict:
+    convert_cols = {
+        "sex": sex_types, 
+        "cp": cp_types, 
+        "thal": thal_types, 
+        "slope": slope_types,
+        "restecg": resting_ecg_types, 
+        "fbs": boolean_types, 
+        "exang": boolean_types
+    }
     converted_input = {}
+    
+    for key, value in input_data.items():
+        if key in convert_cols:
+            converted_value = convert_cols.get(key).get(value)
+        else:
+            converted_value = value
+        converted_input.setdefault(key, converted_value)
+    
     return converted_input
