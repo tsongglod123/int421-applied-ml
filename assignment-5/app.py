@@ -10,7 +10,7 @@ import pandas as pd
 import numpy as np
 import joblib
 
-MODEL_PATH = "./models/model-knn-tuned.pkl"
+MODEL_PATH = "/app/int421-applied-ml/assignment-5/models/model-knn-tuned.pkl"
 
 model = joblib.load(MODEL_PATH)
 
